@@ -1,0 +1,134 @@
+.NavbarItems {
+  background-color: var(--green);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.875rem;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+  width: 95%;
+  height: 5rem;
+  border-radius: 0.813rem;
+  position: fixed;
+  top: 1.25rem;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 9999;
+}
+
+.navbar-logo {
+  color: #222;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  grid-gap: 0.625rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links {
+  color: #222;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+}
+
+.nav-links:hover {
+  background-color: var(--yellow);
+  border-radius: 0.25rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-links-mobile {
+  display: none;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--yellow);
+}
+
+.menu-icons {
+  display: none;
+}
+
+@media screen and (max-width: 850px) {
+  .NavbarItems {
+    z-index: 99;
+  }
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    background: #fff;
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    opacity: 0;
+    align-items: stretch;
+    padding: 5rem 0 1.875rem 0;
+    margin: 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+    opacity: 1;
+    z-index: -1;
+  }
+
+  .nav-links {
+    display: block;
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 2rem 0;
+  }
+  .nav-links:hover {
+    background: var(--green);
+    transition: none;
+  }
+
+  button {
+    display: none;
+  }
+
+  .nav-links-mobile {
+    display: block;
+    text-align: center;
+    padding: 1.5rem;
+    margin: auto;
+    border-radius: 0.25rem;
+    width: 80%;
+    background-color: var(--green);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.125rem;
+    color: #222;
+  }
+  .menu-icons {
+    display: block;
+  }
+
+  .menu-icons i {
+    font-size: 1.2rem;
+    color: #222;
+  }
+}
